@@ -1,0 +1,13 @@
+{
+    "name": "tomvlk/maniacalendar-php-sdk",
+    "description": "ManiaCalendar API SDK for PHP",
+    "type": "library",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Tom Valk",
+            "email": "tomvalk@lt-box.info"
+        }
+    ],
+    "require": {}
+}
