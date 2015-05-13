@@ -29,8 +29,10 @@ abstract class Client {
      * @return boolean|object false on failure, object with response on success
      * @throws Exception
      */
-    private function execute($method, $path, $parameters = array()) {
+    protected function execute($method, $path, $parameters = array()) {
         $url = $this->apiUrl . $path;
+        
+        array_filter($parameters, function($p) {return $p !== null;});
         
         $data = http_build_query($parameters);
         $urldata = http_build_query(["key" => $this->apiKey]);
@@ -63,15 +65,17 @@ abstract class Client {
         $response = curl_exec($curl);
         $responseHeader = curl_getinfo($curl);
         $error = curl_error($curl);
-        $errno = curl_erno($curl);
+        $errno = curl_errno($curl);
+        
+        // Strip header from response
+        $body = substr($response, curl_getinfo($curl, CURLINFO_HEADER_SIZE));
         
         curl_close($curl);
-        
         
         // Check response http code
         if($responseHeader['http_code'] == 200) {
             // All ok! Return the response from server.
-            return json_decode($response);
+            return json_decode($body);
         }elseif($responseHeader['http_code'] == 403) {
             throw new Exception("You don't have access, please check your API Key and your Limit", $responseHeader['http_code']);
         }else{
