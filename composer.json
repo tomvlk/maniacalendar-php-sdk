@@ -11,15 +11,19 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.4.0"
+        "php": ">=5.4.0",
+        "ext-curl": "*",
+        "ext-json": "*"
     },
     "require-dev": {
         "php": ">=5.4.0",
-        "phpunit/phpunit": "4.5.1"
+        "phpunit/phpunit": "4.5.1",
+        "ext-curl": "*",
+        "ext-json": "*"
     },
     "autoload": {
         "psr-0": {
-            "bootbuilder": "src/"
+            "maniacalendar": "src/"
         }
     }
 }
