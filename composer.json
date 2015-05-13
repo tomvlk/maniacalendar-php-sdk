@@ -9,5 +9,17 @@
             "email": "tomvalk@lt-box.info"
         }
     ],
-    "require": {}
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "php": ">=5.4.0",
+        "phpunit/phpunit": "4.5.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "bootbuilder": "src/"
+        }
+    }
 }
