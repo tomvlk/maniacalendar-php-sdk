@@ -22,6 +22,17 @@ abstract class Client {
     }
     
     /**
+     * Set a custom base url, WARNING: add a slash after the url, no version!
+     * Default the base url is http://api.maniacalendar.com/
+     * 
+     * @param string $customBaseUrl default http://api.maniacalendar.com/
+     */
+    public function setCustomBaseUrl($customBaseUrl) {
+        $this->apiBaseUrl = $customBaseUrl;
+        $this->apiUrl = $this->apiBaseUrl . $this->apiVersion . "/";
+    }
+    
+    /**
      * Execute API method
      * @param string $method Can be GET or POST
      * @param string $path The path to add to the API base url, without / on the begin.
