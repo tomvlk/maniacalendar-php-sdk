@@ -17,12 +17,13 @@ class Event extends Client {
      * @param string $title Give a titleid (string) for filtering on title. default null, no filtering on title.
      * @param int $start Filter on events with dates from this UTC Timestamp, default today at 00:00.
      * @param int $end Filter on events with dates ending before UTC Timestamp, default none (null).
-     * @param type $limit Limit the results, default 20.
-     * @param type $offset Start from an offset (use when filtering and want pages)
+     * @param int $limit Limit the results, default 20.
+     * @param int $offset Start from an offset (use when filtering and want pages)
+     * @param string $customtitlepack Filter on custom titlepack
      * @return array Array with objects.
      */
-    public function getEvents($game = null, $style = null, $title = null, $start = null, $end = null, $limit = 20, $offset = 0) {
-        return $this->execute('GET', 'events', ['game' => $game, 'style' => $style, 'title' => $title, 'start' => $start, 'end' => $end, 'limit' => $limit, 'offset' => $offset]);
+    public function getEvents($game = null, $style = null, $title = null, $start = null, $end = null, $limit = 20, $offset = 0, $customtitlepack = null) {
+        return $this->execute('GET', 'events', array('game' => $game, 'style' => $style, 'title' => $title, 'start' => $start, 'end' => $end, 'limit' => $limit, 'offset' => $offset, "customtitlepack" => $customtitlepack));
     }
     
     /**
