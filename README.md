@@ -21,9 +21,11 @@ http://api.maniacalendar.com/doc/keys
 
 ## Usage
 You can use most of the Methods that are available. Currently you can use:
-- Get events (/events/)
-- Get event detail (/event/[id])
-- Get dates for events
+- Get events (/events/).
+- Get event detail (/event/[id]).
+- Get dates for events.
+- Get all titles (/titles/) for filtering.
+- Get all styles (/styles/), or for title, for filtering.
 
 To get started, look at the sample folder.
 
