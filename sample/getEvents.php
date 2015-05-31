@@ -2,7 +2,7 @@
 
 require '../vendor/autoload.php';
 
-$events = new \maniacalendar\Event("APICODE");
+$events = new \maniacalendar\Event("apikey");
 
 $result = $events->getEvents();
 

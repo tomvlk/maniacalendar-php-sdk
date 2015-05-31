@@ -3,12 +3,19 @@
 class BasicClientTest extends PHPUnit_Framework_TestCase {
     
     public function testConnect() {
-        $key = file_get_contents("../testkey.txt");
-        $key = trim($key);
+        $events = new \maniacalendar\Event("WRONG KEY");
         
-        $events = new maniacalendar\Event($key);
+        $foundError = false;
+        $exception = null;
+        try {
+            $events->getEvents();
+        } catch (Exception $ex) {
+            $foundError = true;
+            $exception = $ex;
+        }
+        $this->assertTrue($foundError, "Getting right responses. Api key is not defined, and that should give a exception");
         
-        $this->assertTrue(count($events->getEvents()) > 0, "Getting right responses.");
+        $this->assertEquals(403, $exception->getHttpCode());
     }
     
 }

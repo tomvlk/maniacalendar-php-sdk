@@ -11,6 +11,3 @@ matrix:
   allow_failures:
   - php: 7.0
   - php: hhvm
-before_install:
-- openssl aes-256-cbc -K $encrypted_8d9cdeb3611c_key -iv $encrypted_8d9cdeb3611c_iv
-  -in testkey.txt.enc -out testkey.txt -d
