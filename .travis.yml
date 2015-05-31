@@ -1,15 +1,16 @@
 language: php
 php:
-    - 5.4
-    - 5.5
-    - 5.6
-    - 7.0
-    - hhvm
+- 5.4
+- 5.5
+- 5.6
+- 7.0
+- hhvm
 script: phpunit
 before_script: composer install
-  
 matrix:
-    allow_failures:
-        - php: 7.0
-        - php: hhvm
-  
+  allow_failures:
+  - php: 7.0
+  - php: hhvm
+env:
+  global:
+    secure: HOBJI5DjbPf4kcY6zPCF8TZtSI5Fj3QTjmGBNYnYzk5S1DE73C+HkKTvRU1oA64Yo4kyZqu4YuWoJv+rKwvn7Boc124jY2qDoYGB2p65bVjIk0OWkfWiORktvFtHqEDNfBTFo702ZJdjZjDkuzyOLgaxXd/gXGTLk1Mr8szLi/rNPPGKQLN0V6titAeUg2U5SY9E3Ik2dLS8y9v0XuXTUWi8TQoKXiSKXv+V9boMKcyW2enSahffK/QSBv0RUKVySRtj7MnG91Qd77vMd+DYreWMgiVK+uUX8/iTBMtXya+wLk6I9OXXpqfNNjsn4wvFg4Z4Qnobn6osIXcGwv8FUkFh//EY+qajFDnbecG7BATY4EU9CqwmwDDWqEEQRb4I8laFi5jRNTSVqWpHBycWVkuu1aoxpYDVVRakyPyzfCuQQ7SrJ40wRwJKyfZXHGk+Oq1dtgCTJUBKe0Ldg2RB4ukzMPQ2v/PZSsSHh9iQ1uv5tDLdvZb0erK8+y3Q64qyPspxmt1WyUPhWjPKNHoika4EnjBrBd9+3IFx1uj4UYzqlO7qXSf19w/c36K/H+O9Hrd5t1dgCR7B1bDcMG2Ow8S4yyb1krXnQQv6MbKDQgtdwO98lkEEYgif345YZiYpDUL3BZqqKKTA03iLtms9kiTt6iyxOeYfeESP32WIePw=
